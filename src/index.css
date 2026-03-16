@@ -1,0 +1,32 @@
+@import 'tailwindcss';
+
+body {
+  font-family: 'Ovo', cursive;
+}
+
+.great {
+  font-family: 'Great Vibes', cursive;
+}
+
+.poppins {
+  font-family: 'Poppins', arial;
+}
+
+.judul-header {
+  animation-name: fadeInDown;
+  animation-duration: 1s;
+}
+
+.tamu-header {
+  animation-name: fadeInUp;
+  animation-duration: 1s;
+  animation-delay: 0.3s; /* Pastikan menggunakan 'animation-' */
+  animation-fill-mode: both; /* Tambahkan ini agar elemen tidak kedip saat menunggu delay */
+}
+
+.invit {
+  animation-name: fadeInUp;
+  animation-duration: 1s;
+  animation-delay: 0.8s; /* Pastikan menggunakan 'animation-' */
+  animation-fill-mode: both; /* Tambahkan ini agar elemen tidak kedip saat menunggu delay */
+}
