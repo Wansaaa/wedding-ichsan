@@ -16,11 +16,12 @@ AOS.init();
 
 // remix icon
 import 'remixicon/fonts/remixicon.css';
+import PreLaoder from './components/Preloader.jsx';
+
+// Preloader
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <Header />
     <App />
-    <Footer />
   </StrictMode>,
 );
