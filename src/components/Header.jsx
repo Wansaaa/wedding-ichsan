@@ -74,7 +74,9 @@ function Header() {
 
             {/* Tombol Buka Undangan Utama */}
             <a href="#couple" onClick={handleOpenInvitation} className="inline-flex items-center gap-2 mt-8 px-8 py-3 bg-[#2F4058] text-[#F3F6FA] rounded-full shadow-xl">
-              <span>Buka Undangan</span>
+              <span>
+                <i className="ri-mail-open-line text-xl"></i> Buka Undangan
+              </span>
             </a>
 
             {/* Tombol Musik Mengambang: Hanya muncul jika hasOpened = true */}
