@@ -10,7 +10,7 @@ const WeddingGift = () => {
       html: `
       <div class="text-center poppins px-2">
         <i class="ri-map-pin-2-fill text-[#2F4058] text-3xl mb-3 block"></i>
-        <p class="font-bold text-lg text-[#2F4058]">Ichsan Maulana</p>
+        <p class="font-bold text-lg text-[#2F4058]">Ichsan Sanusi</p>
         <p class="text-sm leading-relaxed text-slate-600 mt-2">
           ${alamatLengkap}
         </p>
