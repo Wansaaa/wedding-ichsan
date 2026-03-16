@@ -14,7 +14,7 @@ const WeddingGift = () => {
         <p class="text-sm leading-relaxed text-slate-600 mt-2">
           ${alamatLengkap}
         </p>
-        <p class="text-xs text-slate-400 mt-1">(No. HP: 0812-3456-7890)</p>
+        <p class="text-xs text-slate-400 mt-1">(No. HP: 0896-6093-4413)</p>
       </div>
     `,
       showCancelButton: true,
