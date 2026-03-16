@@ -1,27 +1,29 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
+import { BrowserRouter } from 'react-router-dom'; // Tambahkan import ini
 import './index.css';
 import App from './App.jsx';
-import Header from './components/Header';
-import Footer from './components/Footer';
 
 // Animate Style
 import 'animate.css';
 
+// Remix Icon
+import 'remixicon/fonts/remixicon.css';
+
 // Animasi AOS
 import AOS from 'aos';
-import 'aos/dist/aos.css'; // You can also use <link> for styles
-// ..
-AOS.init();
+import 'aos/dist/aos.css';
 
-// remix icon
-import 'remixicon/fonts/remixicon.css';
-import PreLaoder from './components/Preloader.jsx';
-
-// Preloader
+// Inisialisasi AOS di sini atau di dalam App.jsx (disarankan di App.jsx)
+AOS.init({
+  duration: 1000,
+  once: true,
+});
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <App />
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </StrictMode>,
 );
