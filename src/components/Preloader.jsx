@@ -25,7 +25,7 @@ const PreLoader = () => {
   if (!loading) return null;
 
   return (
-    <div className="fixed inset-0 flex flex-col items-center justify-center bg-[#F3F6FA] z-[9999]">
+    <div className="fixed inset-0 flex flex-col items-center justify-center bg-[#e3eaef] z-[9999]">
       {/* Container untuk Lottie agar ukurannya konsisten */}
       <div className="relative">
         <DotLottieReact src="https://lottie.host/ab3cb258-dc1e-4fc6-a17b-7d4851c2ecf4/UlGFgb8urI.lottie" style={{ width: '250px', height: '250px' }} loop autoplay />
