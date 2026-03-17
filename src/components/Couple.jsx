@@ -14,7 +14,7 @@ function Couple() {
       <section
         id="couple-top"
         className="h-screen overflow-hidden bg-cover bg-center flex items-center justify-center p-4 sm:p-6 md:p-8 bg-[url('/assets/bg/phones/phones1.png')]
-      md:bg-[url('/assets/bg/dekstop/1.png')]"
+      md:bg-[url('/assets/bg/dekstop/1.png')] "
       >
         <div
           className="
@@ -34,7 +34,7 @@ function Couple() {
         flex
         flex-col
         items-center
-        relative
+        animate__animated animate__fadeInUp
         "
           data-aos="fade-up"
         >

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Routes, Route, useLocation } from 'react-router-dom';
+import { Routes, Route, useLocation, useNavigate, Navigate } from 'react-router-dom'; // Tambahkan useNavigate & Navigate
 import AOS from 'aos';
 
 // Components
@@ -15,26 +15,41 @@ import 'animate.css';
 function App() {
   const [loading, setLoading] = useState(true);
   const location = useLocation();
+  const navigate = useNavigate(); // Deklarasi sekali saja
 
   // Music State
   const audioRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [hasOpened, setHasOpened] = useState(false);
 
+  // 1. Logic Refresh & Inisialisasi
   useEffect(() => {
+    // Cek Refresh: Balik ke home jika reload
+    const isReload = window.performance
+      .getEntriesByType('navigation')
+      .map((nav) => nav.type)
+      .includes('reload');
+
+    if (isReload && location.pathname !== '/') {
+      navigate('/', { replace: true });
+    }
+
+    // Inisialisasi AOS
     AOS.init({
       duration: 1000,
       once: false,
     });
 
+    // Simulasi Loading
     const timer = setTimeout(() => {
       setLoading(false);
       setTimeout(() => AOS.refresh(), 100);
     }, 3000);
 
     return () => clearTimeout(timer);
-  }, []);
+  }, []); // Kosongkan dependency agar hanya jalan sekali saat mount
 
+  // 2. Logic Scroll & AOS Refresh setiap pindah halaman
   useEffect(() => {
     if (location.pathname === '/couple') {
       const scrollTimer = setTimeout(() => {
@@ -50,6 +65,7 @@ function App() {
     }
   }, [location]);
 
+  // 3. Music Handlers
   const handleOpenInvitation = () => {
     if (audioRef.current) {
       audioRef.current.volume = 0.3;
@@ -73,9 +89,9 @@ function App() {
 
   return (
     <>
-      {/* 1. Tambahkan tag audio di sini */}
+      {/* File audio ditaruh paling luar agar tidak terpengaruh re-render */}
       <audio ref={audioRef} loop>
-        <source src="/assets/music/wedding-song.mp3" type="audio/mpeg" />
+        <source src="/assets/music/song.mp3" type="audio/mpeg" />
       </audio>
 
       {loading ? (
@@ -83,13 +99,14 @@ function App() {
       ) : (
         <div className="animate__animated animate__fadeIn">
           <Routes>
-            {/* 2. Cara kirim props onOpen yang benar */}
             <Route path="/" element={<Header onOpen={handleOpenInvitation} />} />
-            <Route path="/couple" element={<Couple />} />
+
+            {/* Proteksi rute /couple */}
+            <Route path="/couple" element={hasOpened ? <Couple /> : <Navigate to="/" replace />} />
           </Routes>
 
-          {/* 3. FloatingNav hanya muncul jika undangan sudah dibuka */}
-          {hasOpened && <FloatingNav isPlaying={isPlaying} toggleMusic={toggleMusic} />}
+          {/* FloatingNav tetap muncul jika musik play meskipun balik ke home */}
+          {(hasOpened || isPlaying) && <FloatingNav isPlaying={isPlaying} toggleMusic={toggleMusic} />}
         </div>
       )}
     </>

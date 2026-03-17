@@ -3,7 +3,7 @@ import Swal from 'sweetalert2';
 
 const WeddingGift = () => {
   const showAddress = () => {
-    const alamatLengkap = 'Jalan Kemuning 4B Gg. Hasan Suaib 2 No. 37 RT 10 RW 06, Pejaten Timur. Jakarta Selatan 12510';
+    const alamatLengkap = 'Jln Kemuning 4B Gg. Hasan Suaib 2 No. 37 RT 10 RW 06, Pejaten Timur. Jakarta Selatan 12510';
 
     Swal.fire({
       title: 'Alamat Pengiriman',
