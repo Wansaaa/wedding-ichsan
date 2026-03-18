@@ -3,6 +3,7 @@ import Event from './Event';
 import Address from './Address';
 import Footer from './Footer';
 import WeddingGift from './WeddingGift';
+import Gallery from './Gallery';
 const BgImageDekstop = '/assets/bg/dekstop/1.png';
 const flowerTop = '/assets/flower/1.png';
 const flowerSideRight = '/assets/flower/2.png';
@@ -99,6 +100,7 @@ function Couple() {
       <Event />
       <Address />
       <WeddingGift />
+      <Gallery />
       <Footer />
     </>
   );
