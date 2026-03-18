@@ -99,8 +99,8 @@ function Couple() {
       </section>
       <Event />
       <Address />
-      <WeddingGift />
       <Gallery />
+      <WeddingGift />
       <Footer />
     </>
   );

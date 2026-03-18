@@ -83,7 +83,7 @@ const WeddingGift = () => {
         {/* Header Section */}
         <div data-aos="fade-up">
           <h2 className="great text-[#2F4058] text-5xl mb-4">Wedding Gift</h2>
-          <p className="poppins text-sm text-slate-700 max-w-md mx-auto mb-12">Doa restu Anda merupakan karunia terindah bagi kami. Namun jika Anda ingin memberikan tanda kasih, Anda dapat melakukannya melalui:</p>
+          <p className="poppins text-sm text-slate-700 max-w-md mx-auto mb-12">Doa restu dan Kehadiran Anda merupakan karunia terindah bagi kami. Namun jika Anda ingin memberikan tanda kasih, Anda dapat melakukannya melalui:</p>
         </div>
 
         {/* Card Container */}
