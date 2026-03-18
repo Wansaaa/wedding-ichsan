@@ -1,46 +1,68 @@
 import React from 'react';
+// Import Swiper React components
+import { Swiper, SwiperSlide } from 'swiper/react';
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/effect-fade';
 
-const Gallery = () => {
-  // Data foto - Ganti path ini dengan foto asli kamu di folder assets
+// Import required modules
+import { Pagination, Autoplay, EffectFade } from 'swiper/modules';
+
+const GallerySlider = () => {
   const photos = [
-    { id: 1, src: '/assets/gallery/1.jpg', aos: 'fade-up' },
-    { id: 3, src: '/assets/gallery/3.jpg', aos: 'fade-down' },
-    { id: 2, src: '/assets/gallery/2.jpg', aos: 'fade-up' },
-    // { id: 4, src: '/assets/gallery/4.png', aos: 'fade-down' },
-    // { id: 5, src: '/assets/gallery/5.png', aos: 'fade-up' },
-    // { id: 6, src: '/assets/gallery/6.png', aos: 'fade-down' },
+    { id: 1, src: '/assets/gallery/1.jpg' },
+    { id: 3, src: '/assets/gallery/3.jpg' },
+    { id: 2, src: '/assets/gallery/2.jpg' },
   ];
 
   return (
     <section
       id="gallery"
-      className="py-20 px-4 bg-cover bg-center bg-[url('/assets/bg/phones/phones1.png')] 
+      className="h-screen py-20 bg-cover bg-center bg-[url('/assets/bg/phones/phones1.png')] 
       md:bg-[url('/assets/bg/dekstop/1.png')] "
     >
-      <div className="max-w-6xl mx-auto text-center">
-        {/* Judul Gallery */}
-        <div className="mb-12" data-aos="zoom-in">
+      <div className="max-w-4xl mx-auto px-4">
+        <div className="text-center mb-10" data-aos="fade-up">
           <h2 className="great text-[#2F4058] text-5xl mb-2">Our Moments</h2>
-          <div className="w-24 h-[2px] bg-[#2F4058]/20 mx-auto mb-4"></div>
-          <p className="poppins text-sm text-[#2F4058]/70 italic">"Kisah kasih dalam bingkai abadi"</p>
+          <p className="poppins text-xs tracking-widest text-slate-400 uppercase">Slide to see more</p>
         </div>
 
-        {/* Grid Foto */}
-        <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 space-y-4">
-          {photos.map((photo) => (
-            <div key={photo.id} className="relative group overflow-hidden rounded-2xl shadow-md" data-aos={photo.aos}>
-              <img src={photo.src} alt={`Gallery ${photo.id}`} className="w-full h-72 object-top object-cover transition-transform duration-700 group-hover:scale-110 cursor-pointer" loading="lazy" />
-
-              {/* Overlay saat di-hover */}
-              {/* <div className="absolute inset-0 bg-[#2F4058]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none flex items-center justify-center">
-                <i className="ri-search-line text-white text-3xl"></i>
-              </div> */}
-            </div>
-          ))}
+        <div data-aos="zoom-in" className="cursor-grab active:cursor-grabbing">
+          <Swiper
+            spaceBetween={0}
+            effect={'fade'} // Efek transisi halus
+            loop={true}
+            grabCursor={true} // Menyalakan fitur kursor bawaan swiper
+            autoplay={{
+              delay: 3000,
+              disableOnInteraction: false,
+            }}
+            pagination={{
+              clickable: true,
+              dynamicBullets: true,
+            }}
+            modules={[EffectFade, Pagination, Autoplay]}
+            className="rounded-3xl shadow-2xl overflow-hidden border-8 border-white"
+          >
+            {photos.map((photo) => (
+              <SwiperSlide key={photo.id}>
+                <div className="relative h-[500px] w-full">
+                  <img src={photo.src} alt={`Gallery ${photo.id}`} className="w-full h-full object-cover object-top" />
+                  {/* Overlay gradasi agar lebih estetik */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
+
+        <p className="text-center mt-8 poppins italic text-sm text-[#2F4058]/60" data-aos="fade-up">
+          "Setiap detik bersamamu adalah cerita yang ingin aku abadikan selamanya."
+        </p>
       </div>
     </section>
   );
 };
 
-export default Gallery;
+export default GallerySlider;

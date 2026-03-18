@@ -30,3 +30,53 @@ body {
   animation-delay: 0.8s; /* Pastikan menggunakan 'animation-' */
   animation-fill-mode: both; /* Tambahkan ini agar elemen tidak kedip saat menunggu delay */
 }
+
+/* Mengubah warna navigasi dan pagination Swiper */
+:root {
+  --swiper-theme-color: #2f4058;
+  --swiper-navigation-size: 24px;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  background: white;
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 18px !important;
+  font-weight: bold;
+}
+
+/* Kursor tangan terbuka saat hover di atas slider */
+.cursor-grab {
+  cursor: grab;
+  cursor: -webkit-grab;
+}
+
+/* Kursor tangan mengepal/menggenggam saat diklik/tarik */
+.cursor-grabbing,
+.active\:cursor-grabbing:active {
+  cursor: grabbing;
+  cursor: -webkit-grabbing;
+}
+
+/* Menyesuaikan warna pagination agar masuk ke tema #2F4058 */
+.swiper-pagination-bullet-active {
+  background: #2f4058 !important;
+  width: 20px !important;
+  border-radius: 5px !important;
+  transition: all 0.3s ease;
+}
+
+/* Mencegah seleksi teks/gambar saat ditarik */
+.select-none {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
