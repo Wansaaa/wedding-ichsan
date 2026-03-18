@@ -38,13 +38,13 @@ function Address() {
         {/* Container Peta */}
         <div className="w-full h-[400px] md:h-[450px] rounded-2xl overflow-hidden shadow-inner border-2 border-white/20 relative z-0">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d249.30510235395792!2d106.84899228181095!3d-6.27591665542726!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNsKwMTYnMzMuMiJTIDEwNsKwNTAnNTYuNCJF!5e0!3m2!1sen!2sid!4v1773639848286!5m2!1sen!2sid" // Pastikan ganti dengan link embed yang benar
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d247.86921475122097!2d106.8493243753606!3d-6.275900088850621!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f30055886b91%3A0x2088f9278275b340!2sPos%20RT%2010!5e0!3m2!1sen!2sid!4v1773808776032!5m2!1sen!2sid"
             width="100%"
             height="100%"
             style={{ border: 0 }}
-            allowFullScreen=""
+            allowfullscreen=""
             loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
+            referrerpolicy="no-referrer-when-downgrade"
             title="Lokasi Pernikahan"
           ></iframe>
         </div>
